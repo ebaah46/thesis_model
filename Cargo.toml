@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "ml_core",
+    "ml_app"
+]
+resolver = "2"
+
+[workspace.dependencies]
+burn = "0.21.0"
+log = "0.4.33"
