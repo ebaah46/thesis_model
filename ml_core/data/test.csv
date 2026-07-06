@@ -1,0 +1,9 @@
+url,label,result
+https://www.google.com,benign,0
+https://www.youtube.com,benign,0
+https://www.facebook.com,benign,0
+https://www.baidu.com,benign,0
+http://greenislandtlc.com/GREEN%20ISLAND%20WEB%20SITE%201_files/_private/Sichern/Sie/Ihre/Online-Banking-Konto/sparkasse.de,malicious,1
+http://frozo.ru/wp-admin/user/,malicious,1
+http://frozo.ru/wp-admin/user,malicious,1
+http://ctarbitration.com/a/3/,malicious,1
