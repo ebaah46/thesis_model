@@ -5,31 +5,13 @@ use anyhow::{Ok, Result as AnyhowResult};
 use csv::Reader;
 use std::{fs::File, path::Path};
 
-use serde::{
-    Deserialize, Deserializer,
-    de::{self},
-};
+use serde::Deserialize;
 // instance of a record in dataset
 #[derive(Debug, Deserialize)]
 pub struct RawRecord {
     pub url: String,
     #[serde(rename = "result")]
-    #[serde(deserialize_with = "bool_from_u8")]
-    pub label: bool,
-}
-
-fn bool_from_u8<'de, D>(deserializer: D) -> std::result::Result<bool, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    match i32::deserialize(deserializer)? {
-        0 => std::result::Result::Ok(false),
-        1 => std::result::Result::Ok(true),
-        other => Err(de::Error::invalid_value(
-            de::Unexpected::Signed(other as i64),
-            &"0 or 1",
-        )),
-    }
+    pub label: u8,
 }
 
 pub fn load_records_from_csv<P: AsRef<Path>>(file_path: P) -> AnyhowResult<Vec<RawRecord>> {
@@ -63,10 +45,10 @@ mod tests {
         let records = load_records_from_csv(data_path).unwrap();
         assert!(!records.is_empty());
         assert_eq!(records.len(), 8);
-        assert_eq!(records[0].label, false); // false represents benign urls
+        assert_eq!(records[0].label, 0); // false represents benign urls
         assert_eq!(records[0].url, "https://www.google.com"); // url validation
 
-        assert_eq!(records[5].label, true); // true represents malicious urls
+        assert_eq!(records[5].label, 1); // true represents malicious urls
         assert_eq!(records[5].url, "http://frozo.ru/wp-admin/user/"); //  url validation
     }
 
