@@ -21,7 +21,7 @@ impl OHEStrategy {
     pub const FIXED_URL_LEN: usize = 99;
     pub const ENCODED_URL_LEN: usize = Self::FIXED_URL_LEN * Self::CHARSET_WORD_LEN; // 8415
     pub const LOOK_UP_TABLE: [u8; 256] = {
-        let mut table = [0u8; 256];
+        let mut table = [255u8; 256];
         let mut i = 0;
 
         while i < OHEStrategy::CHARSET_LEN {
