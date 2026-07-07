@@ -4,7 +4,6 @@
 use burn::{
     Tensor,
     data::dataloader::batcher::Batcher as BurnBatcher,
-    prelude::*,
     tensor::{Int, backend::Backend},
 };
 

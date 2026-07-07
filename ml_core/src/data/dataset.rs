@@ -5,7 +5,7 @@
 // Should also provide possibility to extend tokenization API strategy
 // use burn::data::dataset::Dataset as BurnDataset;
 use anyhow;
-use burn::{data::dataset::Dataset as BurnDataset, prelude::*};
+use burn::data::dataset::Dataset as BurnDataset;
 use serde::{Deserialize, Serialize};
 use std::path::Path;
 
