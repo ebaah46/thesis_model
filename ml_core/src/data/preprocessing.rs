@@ -11,7 +11,7 @@ pub trait Preprocessing<Item> {
 }
 
 // The one-hot encoding preprocessing strategy is
-pub struct OHEStrategy {}
+pub struct OHEStrategy;
 
 impl OHEStrategy {
     const CHARSET: &[u8] =
