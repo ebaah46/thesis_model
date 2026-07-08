@@ -8,3 +8,10 @@ serde.workspace = true
 log.workspace = true
 anyhow.workspace  = true
 csv.workspace = true
+burn.workspace = true
+
+
+
+
+[lints]
+workspace = true
