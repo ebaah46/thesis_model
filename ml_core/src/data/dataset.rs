@@ -29,6 +29,7 @@ pub struct RawItem {
 }
 
 // Dataset
+#[derive(Clone)]
 pub struct Dataset {
     // model-ready dataset records
     pub records: Vec<RawItem>,
