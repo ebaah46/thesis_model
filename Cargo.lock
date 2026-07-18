@@ -3927,6 +3927,10 @@ dependencies = [
 [[package]]
 name = "ml_app"
 version = "0.1.0"
+dependencies = [
+ "burn",
+ "ml_core",
+]
 
 [[package]]
 name = "ml_core"
