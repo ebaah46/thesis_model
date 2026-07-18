@@ -1,3 +1,4 @@
+use ml_core::run_training;
 fn main() {
-    println!("Hello, world!");
+    run_training();
 }
